@@ -140,9 +140,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void trocaFragment(Fragment fFoto) {
-        ft=fm.beginTransaction();
-        ft.replace(R.id.frameLayout,fFoto);
-        ft.commit();
+        if(fDados != null) {
+            ft = fm.beginTransaction();
+            ft.replace(R.id.frameLayout, fFoto);
+            ft.commit();
+        }
     }
 
 
